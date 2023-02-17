@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Style/algostyles}
+
+% 算法框图
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocodex}  % http://mirrors.ctan.org/macros/latex/contrib/algpseudocodex/algpseudocodex.pdf
+% 替换相应词汇
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\renewcommand{\algorithmicend}{\textbf{结束}}
+\renewcommand{\algorithmicif}{\textbf{若}}
+\renewcommand{\algorithmicthen}{\textbf{则}}
+\renewcommand{\algorithmicelse}{\textbf{否则}}
+% \renewcommand{\algorithmicendif}{\textbf{结束}}
+\renewcommand{\algorithmicfor}{\textbf{对}}
+\renewcommand{\algorithmicforall}{\textbf{对所有}}
+\renewcommand{\algorithmicdo}{\textbf{执行}}
+% \renewcommand{\algorithmicendfor}{\textbf{循环结束}}
+\renewcommand{\algorithmicwhile}{\textbf{当}}
+% \renewcommand{\algorithmicendwhile}{\textbf{循环结束}}
+\renewcommand{\algorithmicloop}{\textbf{循环}}
+% \renewcommand{\algorithmicendloop}{\textbf{循环结束}}
+\renewcommand{\algorithmicrepeat}{\textbf{重复}}
+\renewcommand{\algorithmicuntil}{\textbf{直到}}
+% \renewcommand{\algorithmicprint}{\textbf{打印}}
+% \renewcommand{\algorithmicreturn}{\textbf{返回}}
+% \renewcommand{\algorithmictrue}{\textbf{真}}
+% \renewcommand{\algorithmicfalse}\textbf{{假}}
+% \renewcommand{\algorithmicto}{\textbf{到}}
+\renewcommand{\algorithmiccomment}[1]{// #1}  % 注释
+% 算法名
+\floatname{algorithm}{算法}
+\captionsetup[algorithm][bi-first]{  % 中文：算法
+    subrefformat=parens,
+    labelsep=Twospace,
+    font=CapFont,
+    skip=1bp,
+    name=算法
+}
+% BUG: 暂时不能更改英文名为 Algo.
+\captionsetup[algorithm][bi-second]{  % 英文：算法
+    subrefformat=parens,
+    labelsep=Twospace,
+    font=CapFont,
+    skip=1bp,
+    name=Algo.
+}
+\numberwithin{algorithm}{chapter}  % 算法按章编号
+\labelformat{algorithm}{算法 #1}
+
+% 特别定义的代码块，与algorithm包不冲突
+% 代码设置
+\RequirePackage{framed}
+\RequirePackage{listings}
+\RequirePackage{color,xcolor}
+\definecolor{DarkBlue}{rgb}{0.05,0,1}
+\definecolor{DarkGreen}{rgb}{0.01,0.5,0.04}
+\definecolor{DarkPurple}{rgb}{0.67,0.02,0.98}
+% 定义一个新的语言
+\lstdefinelanguage{MATLAB}{
+  morekeywords={if,else,end,for,while,break,continue,function}, % 定义关键字
+  sensitive=true, % 是否大小写敏感
+  morecomment=[l]{\%},
+  morecomment=[l]{\%\%},
+  morestring=[b]",
+  morestring=[d]',}
+% 代码本体设置
+\lstdefinestyle{MATLAB}{
+  language=MATLAB,
+  basicstyle=\footnotesize\ttfamily,
+  backgroundcolor=\color{yellow!10},% 背景色淡黄
+  frame=shadowbox,
+  rulesepcolor=\color{red!20!green!20!blue!20},
+  keywordstyle=[1]\color{DarkBlue},
+  keywordstyle=[2]\color{purple},
+  keywordstyle=[3]\color{orange}\underbar,
+  stringstyle=\color{DarkPurple},
+  commentstyle=\color{DarkGreen},
+  numbers=left,
+  keepspaces=false,
+  numberstyle=\footnotesize,
+  % firstnumber=1,
+  % stepnumber=1,
+}
+\lstset{
+  basicstyle=\small\ttfamily,  % 基本样式+小号字体
+  frame=trbl,
+  % t-top,r-right,b-bottom,l-left
+  frameround=tttt,
+  % 第一个字母表示右上角的拐角，然后顺时针地依次代表各个拐角。f表示方形，t表示弧形
+  % showstringspaces=false,
+  % identifierstyle=,
+  tabsize=4,
+  breaklines=true,  % 自动换行
+  % breakautoindent=true,  % 换行自动缩进
+  % breakindent=2em,  % 缩进距离
+  columns=fixed,  % 固定字间距
+  flexiblecolumns,
+  xleftmargin=2pt,  % 左边距
+  xrightmargin=0pt,
+  aboveskip=5pt,
+  belowskip=0pt,
+  lineskip=-1pt,  % 行距增加值
+}

@@ -1,0 +1,155 @@
+% tikz画流程图
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Style/tikzstyles}
+\RequirePackage{tikz,xcolor,adjustbox}
+% 使用TikZ内部的扩展包：calc计算两点间等分点，arrows.meta用于定制箭头样式，shapes用于椭圆的生成
+\usetikzlibrary{calc,positioning,arrows.meta,shapes,decorations.pathreplacing,calligraphy}
+\newcommand{\densebox}[2]{\begin{minipage}{#1em}\centering #2\end{minipage}}  % 无行距的文本块
+\tikzset{  % 定义样式
+    every node/.style={
+        font=\footnotesize,
+    },
+    startstop/.style={
+        rectangle,
+        rounded corners,
+        minimum width=2cm,
+        minimum height=1cm,
+        text centered,
+        draw=black,
+        % fill=red!30
+    },
+    io/.style={
+        trapezium,
+        trapezium left angle=70,
+        trapezium right angle=110,
+        minimum width=2cm,
+        minimum height=1cm,
+        text centered,
+        draw=black,
+        % fill=blue!25
+    },
+    process/.style={
+        rectangle,
+        minimum width=3cm,
+        minimum height=1cm,
+        text centered,
+        draw=black,
+        % fill=yellow!35
+    },
+    decision/.style={
+        diamond,
+        aspect=3,
+        text centered,
+        minimum width=2.5cm,
+        draw=black,
+        % fill=green!45
+    },
+    xpoints/.style={
+        rectangle,
+        shape border rotate=45,
+        draw=gray!30,
+        fill=orange!60,
+        rounded corners=1mm,
+        minimum width=5mm,
+        minimum height=5mm,
+    },
+    ypoints/.style={
+        rectangle,
+        shape border rotate=45,
+        draw=gray!30,
+        fill=teal!60,
+        rounded corners=1mm,
+        minimum width=5mm,
+        minimum height=5mm,
+    },
+    frame/.style={  % 外部边框(圆角矩形)的样式
+        rectangle,
+        draw=gray,  % 外边框
+        semithick,
+        fill=lime!45,
+        rounded corners=0.2cm,
+        minimum width=6cm,
+        minimum height=4cm,
+    },
+    add/.style={  % 加操作符的样式
+        circle,
+        draw,
+        thick,
+        fill=yellow!60,
+        inner sep=.5pt,
+        minimum width=3mm,
+    },
+    prod/.style={  % 乘操作符的样式
+        circle,
+        draw,
+        thick,
+        fill=lightgray!40!blue!30,
+        inner sep=.5pt,
+        minimum width=3mm,
+    },
+    actfunc/.style={  % 激活函数的样式
+        rectangle,
+        draw,
+        thick,
+        fill=pink!30,
+        minimum width=4.25mm,
+        minimum height=3.75mm,
+        inner sep=1pt,
+    },
+    function/.style={  % 函数的样式
+        ellipse,
+        draw,
+        thick,
+        fill=violet!30,
+        inner sep=1pt
+    },
+    input/.style={  % x的样式
+        circle,
+        draw,
+        fill=orange!50,
+        line width=.75pt,
+        minimum width=5mm,
+        inner sep=1pt,
+    },
+    hidden/.style={  % h的样式
+        circle,
+        draw,
+        fill=olive!30,
+        line width=.75pt,
+        minimum width=5mm,
+        inner sep=1pt,
+    },
+    output/.style={  % y的样式
+        circle,
+        draw,
+        fill=teal!30,
+        line width=.75pt,
+        minimum width=5mm,
+        inner sep=1pt,
+    },
+    cell/.style={  % 其它Cell的样式
+        circle,
+        draw,
+        fill=magenta!30,
+        line width=.75pt,
+        minimum width=5mm,
+        inner sep=1pt,
+    },
+    arrow1/.style={  % 细箭头
+        -stealth
+    },
+    arrow2/.style={  % 粗箭头
+        thick,
+        -Stealth,
+    },
+    arrowC1/.style={  % 圆角样式箭头
+        very thick,
+        >=Stealth[round],
+        rounded corners=2mm,
+    },
+    arrowC2/.style={  % 弧度略大的圆角样式箭头
+        very thick,
+        >=Stealth[round],
+        rounded corners=3mm,
+    },
+}

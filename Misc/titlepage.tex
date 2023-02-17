@@ -1,0 +1,49 @@
+\begin{titlepage}
+    %本页为自定义的封面
+    \begin{center}
+        \linespread{1.25}
+        \vspace{50pt}
+        \ifAcademic
+            {\song \zihao{-1} \textbf{硕~士~学~位~论~文}}
+        \else
+            {\song \zihao{-1} \textbf{专~业~学~位~硕~士~学~位~论~文}}
+        \fi
+        \\\vspace{38.5pt plus 10pt minus 5pt}
+        {\xhei \zihao{2} \textbf{\titlename}}  % 题目
+        \\\vspace{15pt}
+        {\zihao{3} \textbf{\engtitle}}  % 英文题目
+        \\\vspace{120pt}
+        \vspace{122pt plus 50pt minus 50pt}
+        \begin{table}[H]
+            \centering
+            \newcommand{\LR}{\hspace{\fill}}
+            \renewcommand{\arraystretch}{1.75}
+            \begin{tabular}{rl}
+                \makebox[3cm][s]{\song \zihao{-3} 作 \LR 者 \LR 姓 \LR 名：} &
+                \underline{\makebox[5.5cm]{\song \zihao{-3} \Author}}                    \\
+                \ifAcademic
+                    \makebox[3cm][s]{\song \zihao{-3} 学科 \LR 、 \LR 专业：} &
+                    \underline{\makebox[5.5cm]{\song \zihao{-3} \Major}}                     \\
+                \else
+                    \makebox[3cm][s]{\song \zihao{-3} 工 \LR 程 \LR 领 \LR 域：} &
+                    \underline{\makebox[5.5cm]{\song \zihao{-3} \Major}}                     \\
+                \fi
+                \makebox[3cm][s]{\song \zihao{-3} 学 \LR 号：}             &
+                \underline{\makebox[5.5cm]{\song \zihao{-3} \StudentID}}                 \\
+                \makebox[3cm][s]{\song \zihao{-3} 指 \LR 导 \LR 教 \LR 师：} &
+                \underline{\makebox[5.5cm]{\song \zihao{-3} \AdvisorName~\AdvisorTitle}} \\
+                \makebox[3cm][s]{\song \zihao{-3} 完 \LR 成 \LR 日 \LR 期：} &
+                \underline{\makebox[5.5cm]{\song \zihao{-3} \Year 年 \Month 月 \Day 日}}  \\
+            \end{tabular}
+        \end{table}
+        \vspace{55pt plus 25pt minus 25pt}
+        {\xkai \zihao{-2} 大连理工大学}
+        \\\vspace{10pt}
+        {\zihao{-4} Dalian University of Technology}
+        \vfill
+    \end{center}
+\end{titlepage}
+
+\ifPrint  % 封一单面打印
+    \BlankPage
+\fi
