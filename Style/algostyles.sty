@@ -29,21 +29,22 @@
 % \renewcommand{\algorithmicto}{\textbf{到}}
 \renewcommand{\algorithmiccomment}[1]{// #1}  % 注释
 % 算法名
-\floatname{algorithm}{算法}
+\makeatletter
+\DeclareCaptionOption{ALGname}{\renewcommand\ALG@name{#1}}  % caption包3.6i将修复这个问题
+\makeatother
 \captionsetup[algorithm][bi-first]{  % 中文：算法
     subrefformat=parens,
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
-    name=算法
+    ALGname=算法
 }
-% BUG: 暂时不能更改英文名为 Algo.
 \captionsetup[algorithm][bi-second]{  % 英文：算法
     subrefformat=parens,
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
-    name=Algo.
+    ALGname=Algo.
 }
 \numberwithin{algorithm}{chapter}  % 算法按章编号
 \labelformat{algorithm}{算法 #1}
