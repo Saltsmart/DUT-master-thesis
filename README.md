@@ -18,6 +18,7 @@
 🈚目前存在以下bug：
 
 1.  附录插入参考文献的编号暂无法调整为 \[A1\] 这样的格式；（考虑到附录中不常出现参考文献，需要参考[宏包biblatex-gb7714-2015的说明](https://mirror-hk.koddos.net/CTAN/macros/latex/contrib/biblatex-contrib/biblatex-gb7714-2015/biblatex-gb7714-2015.pdf)）
-2.  算法`algorithm`环境的双语标题中，英语仍显示为“算法 1.1”。（目前学校对算法伪代码格式没有规定。该问题是由`bicaption`宏包与`algorithm`环境不适配导致的，请关注[bicaption的issue](https://gitlab.com/axelsommerfeldt/caption/-/issues/158)）
+
+**算法`algorithm`环境的双语标题已经正常！**（目前学校对算法伪代码格式没有规定。该问题是由`bicaption`宏包与`algorithm`环境不适配导致的，参见[bicaption的issue](https://gitlab.com/axelsommerfeldt/caption/-/issues/158)）
 
 学校同学当中流传过各种latex模板，重复造轮子非常耽误大家的时间，非常希望这个模板能够继续开发下去♥有任何问题反馈，欢迎cue：ts151820\[at\]163\[dot\]com！
