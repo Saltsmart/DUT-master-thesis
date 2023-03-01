@@ -1,5 +1,3 @@
-% 打印版添加空页
-% 3.附录插入公式和参考文献的编号
 \ProvidesClass{Style/dutthesis}
 \NeedsTeXFormat{LaTeX2e}
 \newif{\ifPrint}
@@ -93,9 +91,9 @@
       number=\arabic{chapter},
     }
 }
-\titlespacing{\chapter}{0bp}{0\baselineskip}{0.5\baselineskip}  % 章标题：段后1行，段前0行
-\titlespacing{\section}{0bp}{0.1\baselineskip}{0\baselineskip}  % 节标题：段后0行，段前0.5行
-\titlespacing{\subsection}{0bp}{0.1\baselineskip}{0\baselineskip}  % 节中的一级标题：段后0行，段前0.5行
+\titlespacing{\chapter}{0em}{0em}{1em}  % 章标题：段后1行，段前0行
+\titlespacing{\section}{0em}{0.5em}{0em}  % 节标题：段后0行，段前0.5行
+\titlespacing{\subsection}{0em}{0.5em}{0em}  % 节中的一级标题：段后0行，段前0.5行
 \titleformat{\chapter}[hang]{\hei \zihao{-3} \linespacing{1.5}}{\thechapter}{2ex}{}  % 章标题：黑体，小三，1.5倍行距
 \titleformat{\section}[hang]{\hei \zihao{4} \linespacing{1.5}}{\thesection}{2ex}{}  % 节标题：黑体，四号，1.5倍行距
 \titleformat{\subsection}[hang]{\hei \zihao{-4} \linespacing{1.5}}{\thesubsection}{2ex}{}  % 节中的一级标题：黑体，小四，1.5倍行距
@@ -135,34 +133,34 @@
 \RequirePackage[labelformat=simple]{subcaption}
 \RequirePackage{bicaption}  % 双语
 \DeclareCaptionFont{CapFont}{\song \zihao{5}}  % 表名及图名用五号宋体
-\DeclareCaptionLabelSeparator{Twospace}{~~}
+\DeclareCaptionLabelSeparator{TwoSpaces}{~~}
 \DeclareBiCaptionSeparator{MinusSep}{\vspace{-0.3em}}
 \captionsetup{bi-separator=MinusSep}
 % 关于captionsetup的设置：https://www.latexstudio.net/archives/8652.html
 \captionsetup[figure][bi-first]{  % 中文：图
     subrefformat=parens,  % 图名及表名中引用子图、子表时也带括号
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
     name=图
 }
 \captionsetup[table][bi-first]{  % 中文：表
     subrefformat=parens,
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
     name=表
 }
 \captionsetup[figure][bi-second]{  % 英文：图
     subrefformat=parens,
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
     name=Fig.
 }
 \captionsetup[table][bi-second]{  % 英文：表
     subrefformat=parens,
-    labelsep=Twospace,
+    labelsep=TwoSpaces,
     font=CapFont,
     skip=1bp,
     name=Tab.
