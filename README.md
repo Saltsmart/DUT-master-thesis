@@ -1,7 +1,10 @@
 # 目前学校已经推出了LaTeX官方模板，本项目仅供参考，请以学校官方模板为准！！
 ☞官方模板链接：
+
 硕士：http://gs.dlut.edu.cn/info/1210/13321.htm
+
 博士：http://gs.dlut.edu.cn/info/1210/13319.htm
+
 ---
 # DUT-master-thesis
 📕连附录都有的大连理工大学硕士（包括学术型硕士和专业型硕士）学位论文LaTeX模板，参考了以下工作：
